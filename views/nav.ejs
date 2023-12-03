@@ -1,0 +1,60 @@
+<link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="./stylesheets/navstyle.css">
+
+    <div id="cover">
+        <div class="nav">
+            <h2>Expense Tracker</h2>
+            <h3><i class="ri-menu-3-line"></i></h3> 
+        </div>
+        
+        </div>
+        <div id="box">
+            <h1><i class="ri-close-fill"></i></h1> 
+    
+    <nav>
+    <% if(!admin){ %>
+    <!--  -->
+    <div id="nav-sec">
+    <a href="/">Home</a>
+    
+    <a href="/signup">SignUp</a>
+    <a href="/signin">SignIn</a>
+    <a href="/forget">ForgetPassword</a>
+
+    
+
+    </div>
+    <!--  -->
+    <% } else { %>
+    <!--  -->
+    <a href="/profile">Home</a>
+    &nbsp;&nbsp;&nbsp
+    <a href="/reset">Reset Password</a>
+    &nbsp;&nbsp;&nbsp;
+    <a href="/signout">Signout</a>
+    <!--  -->
+    <% } %>
+</nav>
+
+        </div>
+
+
+        
+        <script>
+            var h3=document.querySelector(".nav h3")
+        var h1=document.querySelector(" h1")
+        var box=document.querySelector("#box")
+        h3.addEventListener("click",function(){
+            console.log("hello")
+            // box.style.left="70%"
+            box.style.left="80%"
+            
+        })
+        
+        h1.addEventListener("click",function(){
+            console.log("bye")
+            box.style.left="100%"
+        })
+        
+        </script>
+

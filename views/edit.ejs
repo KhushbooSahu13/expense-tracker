@@ -1,0 +1,29 @@
+<%- include("header.ejs")%>
+<link rel="stylesheet" href="../stylesheets/createexpense.css">
+
+
+<style>
+   #container{
+    width: 100vw;
+    height: 100vh;
+    background-color: #9A94BF;
+   }
+</style>
+<div id="container">
+<form action="/update/<%= elem._id%>" method="post">
+    <h1>Update Detail</h1>
+    <input type="number" placeholder="Amount" name="amount" value="<%= elem.amount%>"> <br><br><br>
+    <input type="text" placeholder="Category" name="category" value="<%= elem.category%>"><br><br><br>
+    <input type="text" placeholder="Remark" name="remark" value="<%= elem.remark%>"> <br><br><br>
+    <select name="paymentmode">
+
+        <option value="cash">Cash</option>
+        <option value="online">Online</option>
+        <option value="cheque">Cheque</option>
+    </select><br><br><br>
+    
+  <button>submit</button>
+
+</form>
+</div>
+<%- include("footer.ejs")%>

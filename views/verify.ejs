@@ -1,0 +1,33 @@
+<%- include("header.ejs")%>
+<link rel="stylesheet" href="./stylesheets/signup.css">
+
+<style>
+    #otp{
+        width: 100vw;
+        height: 13vh;
+        background-color:darkslateblue ;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+    h2{
+        text-align: center;
+       color: white ;
+       font-size: 23px;
+    }
+</style>
+
+<div id="otp">
+    <h2>This is Send Mail Page</h2><br>
+</div>
+<div id="container">
+<form action="/forget/<%= id%>" method="POST">
+    <h1>Verify</h1><br><br><br>
+    <input type="number" name="token" placeholder="Otp here..." /><br><br><br>
+    <input type="password" name="newpassword" placeholder="New Password" /><br><br><br>
+    <button>Verify</button>
+</form>
+</div>
+<!--  -->
+<%- include("footer.ejs")%>

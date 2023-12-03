@@ -1,0 +1,18 @@
+<%- include("header")%>
+<%- include("nav1")%>
+<link rel="stylesheet" href="./stylesheets/signup.css">
+
+<div id="container">
+   
+<form action="/signup" method="post">
+    <h1>Signup</h1>
+  <br><br>  <input type="text" placeholder="username" name="username"><br><br>
+    <input type="email" placeholder="Email" name="email"><br><br>
+    <input type="password" placeholder="Password" name="password"><br><br>
+       
+ <button>submit</button>
+ <p>Create New Account.. <a href="/signup">SignUp</a></p>
+</form>
+</div>
+
+<%- include("footer")%>

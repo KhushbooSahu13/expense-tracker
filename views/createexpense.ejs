@@ -1,0 +1,28 @@
+<%- include("header.ejs")%>
+
+<!--  -->
+<%- include("nav1.ejs")%>
+<link rel="stylesheet" href="./stylesheets/createexpense.css">
+
+
+
+
+<div id="container">
+<form action="/createexpense" method="POST">
+    <h1>Add Expense</h1>
+    <input type="number" name="amount" placeholder="Enter Amount" /><br><br>
+    <input type="text" name="remark" placeholder="Remark" /><br><br>
+    <input type="text" name="category" placeholder="Category" /><br><br>
+    <select name="paymentmode">
+
+        <option value="cash">Cash</option>
+        <option value="online">Online</option>
+        <option value="cheque">Cheque</option>
+    </select><br><br>
+    
+    <button>Add Expense</button>
+    <p>Easily & Happily add your expenses👍👍</p>
+</form>
+</div>
+<!--  -->
+<%- include("footer.ejs")%>

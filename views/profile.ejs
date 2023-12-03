@@ -1,0 +1,65 @@
+<%- include("header.ejs")%>
+
+    <link rel="stylesheet" href="./stylesheets/profile.css">
+    <!--  -->
+    <div id="profile">
+
+    <h1>👋 <%= admin.username %></h1>
+    
+        <img src="<%= admin.image%>" alt="">
+    
+ <hr>
+<div class="new">
+    <div>
+    <h2><a href="/createexpense">Add New Expense</a></h2>
+    </div>
+    <div>
+    <form action="/filter">
+        <select name="key" id="">
+            <option value="amount">Amount</option>
+            <option value="remark">Remark</option>
+            <option value="category">Category</option>
+            <option value="paymentmode">Payment Mode</option>
+            <option value="date">Date</option>
+        </select>
+        <input type="text" name="value" placeholder="enter search term" />
+        <button>Filter</button>
+    </form>
+    </div>
+    <div>
+     <h2>Sum: <%= expenses.reduce((ac,cv) => ac+cv.amount, 0)%></h2></div>
+<!-- <%= JSON.stringify(expenses)%>  -->
+    <!--  -->
+     </div>
+    <div>
+
+    </div>
+
+    <div id="bottom">
+        <div id="show">
+            <h2>Date</h2>
+            <h2>Amount</h2>
+            <h2>Remark</h2>
+            <h2>Catgory</h2>
+            <h2>Payment-Mode</h2>
+            <h2>Update/delete</h2>
+            
+            
+        </div>
+       <% expenses.forEach((elem)=>{ %>
+        <div id="detail">
+            <div id="box"><p><%= elem.createdAt%></p></div>
+            <div id="box "><%= elem.amount%></div>
+            <div id="box"><%= elem.remark%></div>
+            <div id="box"><%= elem.category%></div>
+            <div id="box"><%= elem.paymentmode%></div>
+            <div id="box"><a href="/update/<%= elem._id %>">update</a> / <a href="/delete/<%= elem._id %>">Delete</a></div>
+
+
+
+        </div>
+       <% }) %>
+        
+    </div>
+    </div>
+    <%- include("footer.ejs")%>

@@ -1,0 +1,25 @@
+<%- include("header")%>
+<link rel="stylesheet" href="/stylesheets/signup.css">
+<style>
+    #container{
+        width: 100vw;
+        height: 100vh;
+        background:linear-gradient(white ,#473d8bb4);
+        
+    }
+    form{
+        margin-left: 9%;
+        
+    }
+</style>
+<div id="container">
+<form action="/reset" method="post">
+    <h1>Reset Password</h1><br><br>
+    <input type="password" name="oldpassword" placeholder="Old Password"/><br><br>
+    <input type="password" name="newpassword" placeholder="New Password"/><br><br>
+    <a href="/profile"><button>Done</button></a>
+    <p>Don't worry change your password easily!!!!</p>
+</form>
+</div>
+
+<%- include("footer")%>
